@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etalase Riset Terapan & Publikasi Ilmiah - UPT Perpustakaan Polije</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            850: '#162d59',
+                            900: '#102766',
+                            950: '#0b1c48'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#f3f6fa] text-slate-800 font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- Header / Navbar -->
+    <header class="bg-[#102766] text-white sticky top-0 z-30 shadow-sm">
+        <div class="max-w-3xl mx-auto px-5 py-4 flex items-center justify-between">
+            <!-- Logo & Brand Title -->
+            <div class="flex items-center space-x-3.5">
+                <!-- Gambar Logo Resmi Polije -->
+                <div class="w-11 h-11 rounded-full bg-white flex items-center justify-center p-0.5 shadow-sm shrink-0 overflow-hidden">
+                    <img src="logo-polije.png" alt="Logo UPT Perpustakaan Polije" class="w-full h-full object-contain rounded-full" onerror="this.src='https://placehold.co/100x100/ffffff/102766?text=POLIJE'">
+                </div>
+                <div>
+                    <h1 class="font-bold text-[15px] sm:text-base tracking-wide leading-tight uppercase">UPT PERPUSTAKAAN</h1>
+                    <p class="text-xs sm:text-sm text-blue-100/90 font-normal mt-0.5">Politeknik Negeri Jember</p>
+                </div>
+            </div>
+
+            <!-- Hamburger Menu Button -->
+            <button id="menuBtn" aria-label="Buka Menu" class="p-2 rounded-lg hover:bg-white/10 transition-colors focus:outline-none">
+                <svg class="w-6 h-6 text-white/90" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-1 max-w-3xl w-full mx-auto px-5 pt-7 pb-12">
+        
+        <!-- Hero Section -->
+        <section>
+            <!-- Top Overline Tag -->
+            <div class="flex items-center space-x-2 mb-3">
+                <span class="w-6 h-[2px] bg-[#1e88e5] inline-block rounded-full"></span>
+                <span class="text-[11px] font-bold tracking-wider text-[#1e88e5] uppercase">
+                    INSTITUTIONAL REPOSITORY POLIJE BONDOWOSO
+                </span>
+            </div>
+
+            <!-- Main Heading -->
+            <h2 class="text-[26px] sm:text-3xl font-extrabold text-[#1e293b] leading-[1.22] tracking-tight mb-4">
+                Etalase Riset Terapan &amp;<br class="sm:hidden"> Publikasi Ilmiah
+            </h2>
+
+            <!-- Description Paragraph -->
+            <p class="text-[13.5px] sm:text-[15px] text-[#64748b] leading-[1.65] mb-7">
+                Katalog dan repositori karya ilmiah, metodologi penelitian sistem informasi, sains spasial, dan riset terapan sivitas akademika Politeknik Negeri Jember Kampus Bondowoso.
+            </p>
+
+            <!-- Statistics Row -->
+            <div class="grid grid-cols-2 gap-4 mb-7">
+                <div>
+                    <div class="text-2xl sm:text-3xl font-extrabold text-[#1e293b] tracking-tight">17 Judul</div>
+                    <div class="text-[10.5px] font-bold tracking-wider text-[#94a3b8] uppercase mt-1">
+                        KOLEKSI RESMI BWS
+                    </div>
+                </div>
+                <div>
+                    <div class="text-2xl sm:text-3xl font-extrabold text-[#1e293b] tracking-tight">9 Bidang</div>
+                    <div class="text-[10.5px] font-bold tracking-wider text-[#94a3b8] uppercase mt-1">
+                        BASIS KEILMUAN VOKASI
+                    </div>
+                </div>
+            </div>
+
+            <!-- Primary CTA Button -->
+            <a href="#katalog-riset" class="w-full bg-[#162d59] hover:bg-[#102246] active:scale-[0.99] text-white font-semibold text-[14px] py-3.5 px-6 rounded-full shadow-md shadow-blue-950/10 flex items-center justify-center space-x-2.5 transition-all duration-200 mb-8">
+                <!-- Folder Outline Icon -->
+                <svg class="w-4 h-4 text-blue-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
+                </svg>
+                <span>Jelajahi Riset Terapan</span>
+            </a>
+        </section>
+
+        <!-- Publications / Catalog Cards List -->
+        <section id="katalog-riset" class="space-y-4">
+
+            <!-- Card 1 -->
+            <article onclick="showDetail('Metode Penelitian Terpadu Sistem Informasi : Pemodelan Teoritis & Pengujian Empiris', 'Willy Abdillah', 'Andi', '001.42 ABD')" class="group bg-white rounded-2xl p-4 sm:p-5 shadow-[0_2px_12px_rgba(15,23,42,0.04)] border border-slate-100 hover:border-indigo-200 hover:shadow-md transition-all duration-200 cursor-pointer flex items-center justify-between gap-3">
+                <div class="flex items-start space-x-3.5 sm:space-x-4">
+                    <!-- Left Document Icon Box -->
+                    <div class="w-11 h-11 rounded-xl bg-[#eef2ff] text-[#4f46e5] flex items-center justify-center shrink-0 mt-0.5">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                    </div>
+
+                    <!-- Content Details -->
+                    <div class="space-y-2">
+                        <!-- Category Badges -->
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="inline-block bg-[#eef2ff] text-[#4338ca] text-[10px] font-bold tracking-wide px-2.5 py-0.5 rounded-full uppercase">
+                                RISET &amp; METODOLOGI
+                            </span>
+                            <span class="inline-block bg-[#ecfeff] text-[#0891b2] text-[10px] font-bold tracking-wide px-2.5 py-0.5 rounded-full uppercase">
+                                SISTEM INFORMASI
+                            </span>
+                        </div>
+
+                        <!-- Book / Research Title -->
+                        <h3 class="font-bold text-[14.5px] sm:text-base text-[#1e293b] leading-snug group-hover:text-[#162d59] transition-colors">
+                            Metode Penelitian Terpadu Sistem Informasi : Pemodelan Teoritis &amp; Pengujian Empiris
+                        </h3>
+
+                        <!-- Metadata Footer -->
+                        <p class="text-[11.5px] sm:text-xs text-[#94a3b8] leading-relaxed">
+                            Penulis: Willy Abdillah &bull; Penerbit: Andi &bull; No. Panggil: 001.42 ABD
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Arrow Circle Button -->
+                <div class="w-8 h-8 rounded-full border border-slate-200/80 flex items-center justify-center text-slate-400 group-hover:border-slate-300 group-hover:text-slate-700 group-hover:bg-slate-50 transition-all shrink-0">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article onclick="showDetail('Prosedur-Prosedur Populer Statistik untuk Analisis Data Riset Skripsi & Tesis', 'Jonathan Sarwono', 'Gava Media', '005.5 SAR')" class="group bg-white rounded-2xl p-4 sm:p-5 shadow-[0_2px_12px_rgba(15,23,42,0.04)] border border-slate-100 hover:border-amber-200 hover:shadow-md transition-all duration-200 cursor-pointer flex items-center justify-between gap-3">
+                <div class="flex items-start space-x-3.5 sm:space-x-4">
+                    <!-- Left Chart Document Icon Box -->
+                    <div class="w-11 h-11 rounded-xl bg-[#fef3c7] text-[#b45309] flex items-center justify-center shrink-0 mt-0.5">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                    </div>
+
+                    <!-- Content Details -->
+                    <div class="space-y-2">
+                        <!-- Category Badges -->
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="inline-block bg-[#fef3c7]/80 text-[#b45309] text-[10px] font-bold tracking-wide px-2.5 py-0.5 rounded-full uppercase">
+                                SKRIPSI &amp; RISET
+                            </span>
+                            <span class="inline-block bg-[#f1f5f9] text-[#475569] text-[10px] font-bold tracking-wide px-2.5 py-0.5 rounded-full uppercase">
+                                STATISTIKA DATA
+                            </span>
+                        </div>
+
+                        <!-- Book / Research Title -->
+                        <h3 class="font-bold text-[14.5px] sm:text-base text-[#1e293b] leading-snug group-hover:text-[#162d59] transition-colors">
+                            Prosedur-Prosedur Populer Statistik untuk Analisis Data Riset Skripsi &amp; Tesis
+                        </h3>
+
+                        <!-- Metadata Footer -->
+                        <p class="text-[11.5px] sm:text-xs text-[#94a3b8] leading-relaxed">
+                            Penulis: Jonathan Sarwono &bull; Penerbit: Gava Media &bull; No. Panggil: 005.5 SAR
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Arrow Circle Button -->
+                <div class="w-8 h-8 rounded-full border border-slate-200/80 flex items-center justify-center text-slate-400 group-hover:border-slate-300 group-hover:text-slate-700 group-hover:bg-slate-50 transition-all shrink-0">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article onclick="showDetail('Pengindraan Jauh Metode Analisis Dan Interpretasi Citra Satelit', 'Indarto', 'Andi', '621.367.8 IND')" class="group bg-white rounded-2xl p-4 sm:p-5 shadow-[0_2px_12px_rgba(15,23,42,0.04)] border border-slate-100 hover:border-emerald-200 hover:shadow-md transition-all duration-200 cursor-pointer flex items-center justify-between gap-3">
+                <div class="flex items-start space-x-3.5 sm:space-x-4">
+                    <!-- Left Globe Icon Box -->
+                    <div class="w-11 h-11 rounded-xl bg-[#dcfce7] text-[#15803d] flex items-center justify-center shrink-0 mt-0.5">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+
+                    <!-- Content Details -->
+                    <div class="space-y-2">
+                        <!-- Category Badges -->
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="inline-block bg-[#dcfce7]/80 text-[#15803d] text-[10px] font-bold tracking-wide px-2.5 py-0.5 rounded-full uppercase">
+                                RISET TERAPAN
+                            </span>
+                            <span class="inline-block bg-[#f1f5f9] text-[#475569] text-[10px] font-bold tracking-wide px-2.5 py-0.5 rounded-full uppercase">
+                                GEOSPASIAL &amp; CITRA
+                            </span>
+                        </div>
+
+                        <!-- Book / Research Title -->
+                        <h3 class="font-bold text-[14.5px] sm:text-base text-[#1e293b] leading-snug group-hover:text-[#162d59] transition-colors">
+                            Pengindraan Jauh Metode Analisis Dan Interpretasi Citra Satelit
+                        </h3>
+
+                        <!-- Metadata Footer -->
+                        <p class="text-[11.5px] sm:text-xs text-[#94a3b8] leading-relaxed">
+                            Penulis: Indarto &bull; Penerbit: Andi &bull; No. Panggil: 621.367.8 IND
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Arrow Circle Button -->
+                <div class="w-8 h-8 rounded-full border border-slate-200/80 flex items-center justify-center text-slate-400 group-hover:border-slate-300 group-hover:text-slate-700 group-hover:bg-slate-50 transition-all shrink-0">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <!-- Custom Modal for Interactive Preview (No alert() used) -->
+    <div id="detailModal" class="fixed inset-0 bg-slate-900/50 backdrop-blur-xs z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-xl border border-slate-100 transform transition-all">
+            <div class="flex justify-between items-start mb-4">
+                <span class="text-[11px] font-bold tracking-wider text-[#1e88e5] uppercase">Detail Koleksi Repositori</span>
+                <button onclick="closeModal()" class="text-slate-400 hover:text-slate-600 p-1">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <h4 id="modalTitle" class="font-bold text-lg text-slate-800 leading-snug mb-3"></h4>
+            <div class="space-y-2 text-sm text-slate-600 bg-slate-50 p-3.5 rounded-xl mb-5">
+                <p><span class="font-semibold text-slate-700">Penulis:</span> <span id="modalAuthor"></span></p>
+                <p><span class="font-semibold text-slate-700">Penerbit:</span> <span id="modalPublisher"></span></p>
+                <p><span class="font-semibold text-slate-700">No. Panggil:</span> <span id="modalCallNumber"></span></p>
+            </div>
+            <button onclick="closeModal()" class="w-full bg-[#162d59] hover:bg-[#102246] text-white font-semibold text-sm py-2.5 rounded-xl transition-colors">
+                Tutup
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function showDetail(title, author, publisher, callNumber) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalAuthor').textContent = author;
+            document.getElementById('modalPublisher').textContent = publisher;
+            document.getElementById('modalCallNumber').textContent = callNumber;
+            
+            const modal = document.getElementById('detailModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('detailModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Close modal when clicking outside card
+        document.getElementById('detailModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
